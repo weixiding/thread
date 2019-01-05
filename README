@@ -7,8 +7,13 @@
         结合类加载特点的懒汉式
 
         枚举方式
-    2 监控任务的生命周期
+    2
         Observable使用枚举定义生命周期，并声明接口public Cycle getCycle()获取生命周期
         Task 我们要运行的核心任务接口
         TaskLifecycle 生命周期函数，来执行我们特定生命周期所需要执行的操作
         ObservableThread 一个完整的 带有监控的线程
+
+    3 Single Thread execution
+        引入的问题：访问公共资源时，所引起的并发问题，以及解决并发问题使用synchronized所导致的死锁问题
+        并举了连个问题，吃饭问题，并提出了两个解决思路：使用TableWarePair 封装需要获取的资源，作为锁的对象.
+

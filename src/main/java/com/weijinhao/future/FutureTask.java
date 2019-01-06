@@ -11,7 +11,7 @@ public class FutureTask<T> implements Future<T> {
     //定义对象锁
     private final Object lock = new Object();
 
-    //获取返回值
+    //获取返回值,如果还没有执行完成就等待
     @Override
     public T get() throws InterruptedException {
         synchronized (lock) {
@@ -23,7 +23,7 @@ public class FutureTask<T> implements Future<T> {
         }
 
     }
-    //判断任务是否完成
+    //判断任务是否完成,因为只有一个线程需要修改他所以没有并发的问题
     @Override
     public boolean done() {
         return this.isDone;

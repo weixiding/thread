@@ -30,6 +30,7 @@ public class Singletion3 {
         if(singletion == null) {
             synchronized (Singletion3.class) {
                 if (singletion == null)
+                    //通过valatile 的有序性来解决对象还没有创建完成就把引用给抛出去了
                     singletion = new Singletion3();
             }
         }
